@@ -9,13 +9,21 @@ class Category(models.Model):
                                  max_length=250,
                                  help_text=u'Максимум 250 символів')
     slug = models.SlugField(u"Слаг", unique=True, null=True)
+    objects = models.Manager()
 
     class Meta:
         verbose_name = u'Категорія для публікації'
         verbose_name_plural = u'Категорії для публікацій'
 
-        def __str__(self):
-            return self.category
+    def __str__(self):
+        return self.category
+        
+    def get_absolute_url(self):
+        try:
+            url = reverse("articles-category-list", kwargs={"slug": self.slug})
+        except:
+            url = "/"
+        return url
 
 class Article(models.Model):
     title = models.CharField(u'Заголовок',
@@ -43,28 +51,27 @@ class Article(models.Model):
                                   on_delete=models.CASCADE)
     objects = models.Manager()
 
-class Meta:
-    ordering = ['-pub_date']
-    verbose_name = u'Стаття'
-    verbose_name_plural = u'Статті'
+    class Meta:
+        ordering = ['-pub_date']
+        verbose_name = u'Стаття'
+        verbose_name_plural = u'Статті'
+    
+    def __str__(self):
+        return self.title
 
-def __str__(self):
-    return self.title
-
-def get_absolute_url(self):
-    try:
-        url = reverse('news-detail',
-        kwargs={
-            'year': self.pub_date.strftime("%Y"),
-            'month': self.pub_date.strftime("%m"),
-            'day': self.pub_date.strftime("%d"),
-            'slug': self.slug,
-        },
-    )
-    except:
-        url ="/"
-    return url
-
+    def get_absolute_url(self):
+        try:
+            url = reverse("news-detail",
+            kwargs={
+                "year": self.pub_date.strftime("%Y"),
+                "month": self.pub_date.strftime("%m"),
+                "day": self.pub_date.strftime("%d"),
+                "slug": self.slug,
+            },
+        )
+        except:
+            url ="/"
+        return url
 
 class ArticleImage(models.Model):
     article = models.ForeignKey(Article,
