@@ -1,0 +1,126 @@
+@import
+url("https://fonts.googleapis.com/css?family=Arimo");
+
+@media (max-width: 480px) {
+h1 {
+font-size: 18px;
+}}
+
+h5{
+    padding: 5px;
+    margin-top: 5px;
+}
+
+li > a{
+    font-size: 20px;
+    font-family: 'Arimo', sans-serif;
+    color: rgb(200,195,188);
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgb(200,195,188);
+    text-decoration: none;
+}
+a {
+    display: inline-block;
+    color: rgb(200,195,188);
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:after {
+    background-color: #f66d52;
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+}
+
+a:hover:after,
+a:focus:after {
+    width: 100%;
+    color: rgb(200,195,188);
+    text-decoration: none;
+}
+
+body > div > div > ol > li {
+    margin: 0 5px;
+}
+
+div.container-image > img {
+    width: 100%;
+}
+
+div > h1 {
+color: rgb(200,195,188);
+font-family: 'Arimo', sans-serif;
+text-decoration: none;
+}
+
+body > div > nav > div > a > h4 {
+color: rgb(200,195,188);
+font-family: 'Arimo', sans-serif;
+text-decoration: none;
+}
+
+div>h1,
+a>h4 {
+    color: #6947FF;
+    text-decoration: none;
+}
+
+.article-block {
+background: rgb(24,26,27);
+color: #383838;
+font-family: 'Arimo', sans-serif;
+box-shadow: 2px 2px 1px #ccc;
+padding: 10px;
+margin: 10px;
+}
+
+.article-block a {
+color: #383838;
+font-family: 'Arimo', sans-serif;
+}
+
+.articles-row {
+    margin: 20px;
+    padding: 30px;
+    background: rgba(14, 17, 19, 0.753);
+    box-shadow: 2px 2px 1px #6947FF;
+    border: 1px #6947FF;
+}
+
+.article-row > a:hover{
+    color: rgb(200,195,188);
+    text-decoration: none;
+}
+
+.fotorama {
+    max-width: 500px;
+    margin: 0 auto;
+} 
+
+.fotorama-img {
+    max-width: 500px;
+    max-height: 500px;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+div.fotorama > img {
+    width: 100%;
+}
+.detail-article-row{
+    background: rgb(14, 17, 19, 0.753);
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    width: auto;
+    border-radius: 10px;
+    font-size: 20px;
+}
